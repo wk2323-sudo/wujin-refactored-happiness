@@ -1,0 +1,149 @@
+ .title{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    color: brown;
+ }
+
+ .title-description{
+    font-size:20px;
+ }
+ 
+ .about-title{
+    font-family: Arial, Helvetica, sans-serif;
+    color:brown;
+ }
+ 
+.recipe-title{
+    font-family: Arial, Helvetica, sans-serif;
+    color:brown;
+}
+ 
+ 
+ .layout {
+  display: flex;
+  gap: 2rem;           
+  align-items: flex-start;
+  font-family: 'Times New Roman', Times, serif
+}
+
+.main-content {
+  flex: 3;             
+} 
+
+.sidebar {
+  flex: 1;             
+  border-left: 2px solid white;
+  padding-left: 1.5rem;
+  font-size: 0.95rem;
+  background-color: #faf7f5;
+}
+
+.recipe-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.recipe-main{
+  flex: 3;
+  min-width: 0;
+}
+
+.recipe-sidebar {
+  flex: 1;
+  padding: 1.25rem;
+  border: 1px;
+  border-radius: 12px;
+  background-color: #faf7f5;
+
+  
+}
+
+
+.recipe-nutrition h2 {
+  margin-top: 0;
+}
+
+.recipe-nutrition-note {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0.5rem 0 1rem;
+}
+
+.recipe-nutrition-list {
+  margin: 0;
+  padding: 0;
+}
+
+.recipe-nutrition-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e6ded7;
+}
+
+.recipe-nutrition-row:last-child {
+  border-bottom: none;
+}
+
+.recipe-nutrition-row dt {
+  font-weight: 600;
+}
+
+.recipe-nutrition-row dd {
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .recipe-layout {
+    flex-direction: column;
+  }
+
+  .recipe-sidebar {
+    width: 100%;
+  }
+}
+
+
+.contact-page {
+  min-height: 100vh;             
+  display: flex;
+  justify-content: center;        /* 가로 중앙 */
+  align-items: center;            /* 세로 중앙 */
+  padding: 2rem;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 700px;               /* 폼 최대 너비 */
+  background-color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid black;
+}
+
+
+
+
+
+
+/* =========================
+   CONTACT NAV LAYOUT
+   ========================= */
+
+
+
+.nav-left {
+color: #402103;
+  float: left;
+  text-align: left;
+  font-size: 32px;
+}
+
+.nav-right {
+  float: right;
+  text-align: right;
+  font-family: 'Times New Roman', Times, serif;
+}

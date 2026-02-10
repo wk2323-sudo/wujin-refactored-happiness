@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/style.css" />
+  </head>
+  <body>
+    <fieldset>
+      <nav class="contact-nav">
+        <div class="nav-left">
+          <strong>Chocolate Chip Cookie Project</strong>
+        </div>
+
+        <div class="nav-right">
+          <a href="../index.html"><strong>HOME</strong></a>
+          <a href="../about/index.html"><strong>ABOUT</strong></a>
+          <a href="../recipe/index.html"><strong>RECIPE</strong></a>
+          <a href="./index.html"><strong>CONTACT</strong></a>
+        </div>
+      </nav>
+    </fieldset>
+
+    <main class="contact-page">
+      <div class="contact-container">
+        <header>
+          <h1>Contact Us</h1>
+          <p>
+            Have a question, suggestion, or favorite cookie variation? We’d love
+            to hear from you.
+          </p>
+        </header>
+        <form action="#" method="post">
+          <!-- Basic Information -->
+          <fieldset>
+            <legend>Information</legend>
+
+            <label for="firstName">First Name:</label>
+            <input type="text" name="firstName" id="firstName" required />
+
+            <br /><br />
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" name="lastName" id="lastName" />
+
+            <br /><br />
+
+            <label for="email">Email Address:</label>
+            <input type="email" name="email" id="email" required />
+          </fieldset>
+
+          <!-- Message -->
+          <fieldset>
+            <legend>Message</legend>
+            <textarea name="message" id="message" cols="50" rows="8"></textarea>
+          </fieldset>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <p>© 2026 Chocolate Chip Cookie Project</p>
+    </footer>
+  </body>
+</html>
