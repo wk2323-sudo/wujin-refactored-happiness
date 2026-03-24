@@ -11,35 +11,33 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="cursor"></div>
-    <div id="cursor-ring"></div>
+    <input type="checkbox" id="nav-toggle" />
 
-    <!-- NAV -->
     <nav id="mainNav">
       <a class="nav-logo" href="index.html">Wujin Kwon</a>
-      <ul class="nav-links" id="navLinks">
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="work.html">Work</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html" class="active">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <div class="nav-hamburger" id="hamburger" onclick="toggleMobile()">
+      <label for="nav-toggle" class="nav-hamburger">
         <span></span><span></span><span></span>
-      </div>
+      </label>
     </nav>
 
     <!-- HERO -->
     <section class="services-page-hero">
-      <p class="page-label reveal">What I Offer</p>
-      <h1 class="page-h1 reveal">The craft<br />behind the <em>work</em></h1>
+      <p class="page-label">What I Offer</p>
+      <h1 class="page-h1">The craft<br />behind the <em>work</em></h1>
       <div class="services-hero-row">
-        <p class="reveal">
+        <p>
           I offer a focused range of design services, executed with exceptional
           craft and strategic clarity. Every engagement is bespoke — shaped
           around your specific goals, constraints, and ambitions.
         </p>
-        <div class="services-hero-nums reveal">
+        <div class="services-hero-nums">
           <div>
             <span class="svc-num-big">3</span
             ><span class="svc-num-label">Core services</span>
@@ -53,7 +51,7 @@
     </section>
 
     <!-- PHOTO BANNER -->
-    <div class="service-photo-banner reveal">
+    <div class="service-photo-banner">
       <img
         src="https://images.unsplash.com/photo-1542744094-3a31f272c490?w=1600&q=85&auto=format&fit=crop"
         alt="Designer at work with brand materials"
@@ -71,7 +69,7 @@
 
     <!-- SERVICE CARDS -->
     <div class="services-full">
-      <div class="service-full-card reveal">
+      <div class="service-full-card">
         <div class="sfc-left">
           <div class="sfc-num">01</div>
           <h2 class="sfc-title">Brand Identity</h2>
@@ -116,7 +114,7 @@
         </div>
       </div>
 
-      <div class="service-full-card reveal">
+      <div class="service-full-card">
         <div class="sfc-left">
           <div class="sfc-num">02</div>
           <h2 class="sfc-title">Art Direction</h2>
@@ -155,7 +153,7 @@
         </div>
       </div>
 
-      <div class="service-full-card reveal">
+      <div class="service-full-card">
         <div class="sfc-left">
           <div class="sfc-num">03</div>
           <h2 class="sfc-title">Digital Design</h2>
@@ -195,8 +193,8 @@
 
     <!-- PROCESS -->
     <section class="process-section">
-      <h2 class="reveal">My <em>Process</em></h2>
-      <div class="process-steps reveal">
+      <h2>My <em>Process</em></h2>
+      <div class="process-steps">
         <div class="process-step">
           <div class="ps-num">01</div>
           <h3 class="ps-title">Discovery</h3>
@@ -236,9 +234,9 @@
       </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- FAQ — pure CSS checkbox accordion -->
     <section class="faq-section">
-      <h2 class="reveal">
+      <h2>
         Frequently Asked<br /><span
           style="
             font-style: italic;
@@ -247,13 +245,15 @@
           >Questions</span
         >
       </h2>
-      <div class="faq-items reveal" id="faqItems">
+      <div class="faq-items">
         <div class="faq-item">
-          <div class="faq-q">
+          <input type="checkbox" id="faq1" />
+          <label class="faq-q" for="faq1">
             <span class="faq-q-text"
               >How long does a typical brand identity project take?</span
-            ><span class="faq-icon">+</span>
-          </div>
+            >
+            <span class="faq-icon">+</span>
+          </label>
           <div class="faq-a">
             <p>
               Most brand identity projects run between 6 and 10 weeks from
@@ -264,12 +264,15 @@
             </p>
           </div>
         </div>
+
         <div class="faq-item">
-          <div class="faq-q">
+          <input type="checkbox" id="faq2" />
+          <label class="faq-q" for="faq2">
             <span class="faq-q-text"
               >Do you work with startups, or only established brands?</span
-            ><span class="faq-icon">+</span>
-          </div>
+            >
+            <span class="faq-icon">+</span>
+          </label>
           <div class="faq-a">
             <p>
               Both — and I genuinely enjoy both. Early-stage brands bring the
@@ -280,12 +283,15 @@
             </p>
           </div>
         </div>
+
         <div class="faq-item">
-          <div class="faq-q">
+          <input type="checkbox" id="faq3" />
+          <label class="faq-q" for="faq3">
             <span class="faq-q-text"
               >What information do you need to provide a quote?</span
-            ><span class="faq-icon">+</span>
-          </div>
+            >
+            <span class="faq-icon">+</span>
+          </label>
           <div class="faq-a">
             <p>
               A brief description of your project, your approximate timeline,
@@ -295,11 +301,13 @@
             </p>
           </div>
         </div>
+
         <div class="faq-item">
-          <div class="faq-q">
-            <span class="faq-q-text">Do you offer payment plans?</span
-            ><span class="faq-icon">+</span>
-          </div>
+          <input type="checkbox" id="faq4" />
+          <label class="faq-q" for="faq4">
+            <span class="faq-q-text">Do you offer payment plans?</span>
+            <span class="faq-icon">+</span>
+          </label>
           <div class="faq-a">
             <p>
               Yes. For projects over €5,000, I typically structure payment as
@@ -309,12 +317,15 @@
             </p>
           </div>
         </div>
+
         <div class="faq-item">
-          <div class="faq-q">
+          <input type="checkbox" id="faq5" />
+          <label class="faq-q" for="faq5">
             <span class="faq-q-text"
               >Can I hire you for an ongoing retainer?</span
-            ><span class="faq-icon">+</span>
-          </div>
+            >
+            <span class="faq-icon">+</span>
+          </label>
           <div class="faq-a">
             <p>
               Absolutely — and it's one of my favourite ways to work. A monthly
@@ -338,7 +349,5 @@
       </ul>
       <span>© 2026 — All rights reserved</span>
     </footer>
-
-    <script src="nav.js"></script>
   </body>
 </html>

@@ -11,40 +11,38 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="cursor"></div>
-    <div id="cursor-ring"></div>
+    <input type="checkbox" id="nav-toggle" />
 
-    <!-- NAV -->
     <nav id="mainNav">
       <a class="nav-logo" href="index.html">Wujin Kwon</a>
-      <ul class="nav-links" id="navLinks">
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="work.html">Work</a></li>
         <li><a href="about.html" class="active">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <div class="nav-hamburger" id="hamburger" onclick="toggleMobile()">
+      <label for="nav-toggle" class="nav-hamburger">
         <span></span><span></span><span></span>
-      </div>
+      </label>
     </nav>
 
     <!-- HERO -->
     <section class="about-page-hero">
-      <div class="about-page-left reveal">
+      <div class="about-page-left">
         <p class="page-label">About Me</p>
         <h1>A designer<br />who <em>listens</em><br />first.</h1>
       </div>
-      <div class="about-page-right reveal reveal-d2">
+      <div class="about-page-right">
         <p>
           Great design begins long before the first sketch. It begins in
           conversation — in understanding what a brand stands for at its core,
           who it speaks to, and what it dares to say differently. That belief
-          has guided every project since 2020.
+          has guided every project since 2016.
         </p>
         <p style="margin-top: 20px">
-          Based between New York and working remotely with clients across South
-          Korea and North America, I bring a distinctly European sensibility to
+          Based between Paris and working remotely with clients across Europe
+          and North America, I bring a distinctly European sensibility to
           identity and editorial work: restrained, precise, and deeply
           considered.
         </p>
@@ -52,9 +50,12 @@
     </section>
 
     <!-- PORTRAIT + QUOTE -->
-    <section class="about-portrait-section reveal">
+    <section class="about-portrait-section">
       <div class="portrait-frame">
-        <img src="img/photo-1494790108377-be9c29b29330.avif" alt="designer" />
+        <img
+          src="img/photo-1494790108377-be9c29b29330.avif"
+          alt="Léa Moreau, designer"
+        />
       </div>
       <div class="portrait-side">
         <p class="portrait-quote">
@@ -64,7 +65,7 @@
         <div class="portrait-detail">
           Wujin Kwon<br />
           New York, United States<br />
-          Independent Designer since 2020<br />
+          Independent Designer since 2019<br />
           <span style="color: var(--rust); margin-top: 8px; display: block"
             >wk2323@nyu.edu</span
           >
@@ -74,7 +75,7 @@
 
     <!-- STORY -->
     <section class="about-story">
-      <div class="about-story-text reveal">
+      <div class="about-story-text">
         <h2>From art school to brand studio to independent practice.</h2>
         <p>
           I studied Visual Communication at the
@@ -85,7 +86,7 @@
           French design.
         </p>
         <p>
-          After graduation I joined <strong>New York University</strong>, one of
+          After graduation I joined <strong>Bureau Violet</strong>, one of
           Paris's most respected independent identity studios, where I spent
           three years as a designer and eventually lead art director on projects
           for Hermès, the Musée d'Orsay, and several high-growth startups.
@@ -104,7 +105,7 @@
           keep my collection of analogue cameras in working order.
         </p>
       </div>
-      <div class="about-sidebar reveal reveal-d2">
+      <div class="about-sidebar">
         <div class="about-sidebar-block">
           <h4>Education</h4>
           <ul>
@@ -138,9 +139,8 @@
 
     <!-- TIMELINE -->
     <section class="about-timeline">
-      <h2 class="reveal">Career <em>Timeline</em></h2>
-
-      <div class="timeline-item reveal">
+      <h2>Career <em>Timeline</em></h2>
+      <div class="timeline-item">
         <span class="timeline-year">2019–<br />Now</span>
         <div class="timeline-content">
           <h3>Independent Designer &amp; Art Director</h3>
@@ -153,8 +153,7 @@
           </p>
         </div>
       </div>
-
-      <div class="timeline-item reveal">
+      <div class="timeline-item">
         <span class="timeline-year">2016–<br />2019</span>
         <div class="timeline-content">
           <h3>Lead Art Director — Bureau Violet</h3>
@@ -167,8 +166,7 @@
           </p>
         </div>
       </div>
-
-      <div class="timeline-item reveal">
+      <div class="timeline-item">
         <span class="timeline-year">2015</span>
         <div class="timeline-content">
           <h3>Design Intern — Pentagram</h3>
@@ -180,8 +178,7 @@
           </p>
         </div>
       </div>
-
-      <div class="timeline-item reveal">
+      <div class="timeline-item">
         <span class="timeline-year">2014–<br />2016</span>
         <div class="timeline-content">
           <h3>MFA Visual Communication — ENSAD</h3>
@@ -197,10 +194,10 @@
       </div>
     </section>
 
-    <!-- SKILLS -->
+    <!-- SKILLS — bars set with inline style width (no JS needed) -->
     <section class="skills-section">
-      <h2 class="reveal">Skills &amp;<br />Expertise</h2>
-      <div class="skills-categories reveal" id="skillsGrid">
+      <h2>Skills &amp;<br />Expertise</h2>
+      <div class="skills-categories">
         <div class="skill-cat">
           <p class="skill-cat-title">Design &amp; Identity</p>
           <div class="skill-bars">
@@ -209,7 +206,7 @@
                 <span>Brand Identity</span><span>98%</span>
               </div>
               <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-width="98"></div>
+                <div class="skill-bar-fill" style="width: 98%"></div>
               </div>
             </div>
             <div class="skill-bar-row">
@@ -217,7 +214,7 @@
                 <span>Typography</span><span>95%</span>
               </div>
               <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-width="95"></div>
+                <div class="skill-bar-fill" style="width: 95%"></div>
               </div>
             </div>
             <div class="skill-bar-row">
@@ -225,7 +222,7 @@
                 <span>Art Direction</span><span>92%</span>
               </div>
               <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-width="92"></div>
+                <div class="skill-bar-fill" style="width: 92%"></div>
               </div>
             </div>
             <div class="skill-bar-row">
@@ -233,7 +230,7 @@
                 <span>Editorial Design</span><span>90%</span>
               </div>
               <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-width="90"></div>
+                <div class="skill-bar-fill" style="width: 90%"></div>
               </div>
             </div>
           </div>
@@ -246,7 +243,7 @@
                 <span>UI / UX Design</span><span>85%</span>
               </div>
               <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-width="85"></div>
+                <div class="skill-bar-fill" style="width: 85%"></div>
               </div>
             </div>
             <div class="skill-bar-row">
@@ -254,7 +251,7 @@
                 <span>Motion Design</span><span>80%</span>
               </div>
               <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-width="80"></div>
+                <div class="skill-bar-fill" style="width: 80%"></div>
               </div>
             </div>
             <div class="skill-bar-row">
@@ -262,7 +259,7 @@
                 <span>Web Direction</span><span>78%</span>
               </div>
               <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-width="78"></div>
+                <div class="skill-bar-fill" style="width: 78%"></div>
               </div>
             </div>
             <div class="skill-bar-row">
@@ -270,7 +267,7 @@
                 <span>Packaging</span><span>88%</span>
               </div>
               <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-width="88"></div>
+                <div class="skill-bar-fill" style="width: 88%"></div>
               </div>
             </div>
           </div>
@@ -283,7 +280,7 @@
                 <span>Figma</span><span>95%</span>
               </div>
               <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-width="95"></div>
+                <div class="skill-bar-fill" style="width: 95%"></div>
               </div>
             </div>
             <div class="skill-bar-row">
@@ -291,7 +288,7 @@
                 <span>Adobe InDesign</span><span>98%</span>
               </div>
               <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-width="98"></div>
+                <div class="skill-bar-fill" style="width: 98%"></div>
               </div>
             </div>
             <div class="skill-bar-row">
@@ -299,7 +296,7 @@
                 <span>After Effects</span><span>75%</span>
               </div>
               <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-width="75"></div>
+                <div class="skill-bar-fill" style="width: 75%"></div>
               </div>
             </div>
             <div class="skill-bar-row">
@@ -307,7 +304,7 @@
                 <span>Cinema 4D</span><span>60%</span>
               </div>
               <div class="skill-bar-track">
-                <div class="skill-bar-fill" data-width="60"></div>
+                <div class="skill-bar-fill" style="width: 60%"></div>
               </div>
             </div>
           </div>
@@ -317,8 +314,8 @@
 
     <!-- AWARDS -->
     <section class="awards-section">
-      <h2 class="reveal">Recognition</h2>
-      <div class="awards-grid reveal">
+      <h2>Recognition</h2>
+      <div class="awards-grid">
         <div class="award-card">
           <p class="award-year">2024</p>
           <h3 class="award-name">D&amp;AD Wood Pencil</h3>
@@ -364,7 +361,5 @@
       </ul>
       <span>© 2026 — All rights reserved</span>
     </footer>
-
-    <script src="nav.js"></script>
   </body>
 </html>

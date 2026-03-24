@@ -9,56 +9,122 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Project detail sections — replace modals */
+      .project-detail {
+        padding: 80px 48px;
+        border-top: 1px solid rgba(26, 23, 20, 0.1);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: start;
+        scroll-margin-top: 100px;
+      }
+      .project-detail:nth-child(even) {
+        background: var(--mist);
+      }
+      .detail-visual {
+        aspect-ratio: 4/3;
+        overflow: hidden;
+        position: relative;
+      }
+      .detail-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s ease;
+      }
+      .detail-visual:hover img {
+        transform: scale(1.04);
+      }
+      .detail-cat {
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--rust);
+        margin-bottom: 12px;
+      }
+      .detail-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(28px, 3vw, 42px);
+        font-weight: 300;
+        line-height: 1.1;
+        margin-bottom: 20px;
+      }
+      .detail-desc {
+        color: #6b6560;
+        line-height: 2;
+        margin-bottom: 24px;
+        font-size: 13px;
+      }
+      .detail-challenge-label {
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--ink);
+        margin-bottom: 10px;
+      }
+      .detail-challenge {
+        color: #6b6560;
+        line-height: 1.9;
+        font-size: 12px;
+        margin-bottom: 28px;
+      }
+      .detail-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .detail-tag {
+        padding: 6px 14px;
+        border: 1px solid rgba(26, 23, 20, 0.15);
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #6b6560;
+      }
+      @media (max-width: 768px) {
+        .project-detail {
+          grid-template-columns: 1fr;
+          padding: 56px 24px;
+          gap: 32px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="cursor"></div>
-    <div id="cursor-ring"></div>
+    <input type="checkbox" id="nav-toggle" />
 
-    <!-- NAV -->
     <nav id="mainNav">
       <a class="nav-logo" href="index.html">Wujin Kwon</a>
-      <ul class="nav-links" id="navLinks">
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="work.html" class="active">Work</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <div class="nav-hamburger" id="hamburger" onclick="toggleMobile()">
+      <label for="nav-toggle" class="nav-hamburger">
         <span></span><span></span><span></span>
-      </div>
+      </label>
     </nav>
 
     <!-- HERO -->
     <section class="work-hero">
-      <p class="page-label reveal">Portfolio</p>
-      <h1 class="page-h1 reveal"><em>Selected</em><br />Work</h1>
-      <p class="work-hero-sub reveal">
+      <p class="page-label">Portfolio</p>
+      <h1 class="page-h1"><em>Selected</em><br />Work</h1>
+      <p class="work-hero-sub">
         Five years of collaboration with forward-thinking brands, cultural
         institutions, and studios across Europe and beyond. Every project begins
         with listening.
       </p>
     </section>
 
-    <!-- FILTER BAR -->
-    <div class="filter-bar reveal" id="filterBar">
-      <button class="filter-btn active" data-filter="all">All Work</button>
-      <button class="filter-btn" data-filter="brand">Brand Identity</button>
-      <button class="filter-btn" data-filter="digital">Digital</button>
-      <button class="filter-btn" data-filter="editorial">Editorial</button>
-      <button class="filter-btn" data-filter="packaging">Packaging</button>
-      <button class="filter-btn" data-filter="motion">Motion</button>
-    </div>
-
     <!-- FEATURED PROJECT -->
-    <div
-      class="featured-project reveal"
-      onclick="openModal('maison')"
-      data-category="brand"
-    >
+    <div class="featured-project">
       <div class="featured-visual">
         <img
-          src="img/photo-1586717791821-3f44a563fa4c.avif"
+          src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=1000&q=85&auto=format&fit=crop"
           alt="Maison Duval brand identity project"
         />
       </div>
@@ -81,22 +147,18 @@
             <span class="deliverable">Typography</span>
             <span class="deliverable">Guidelines</span>
           </div>
-          <span class="featured-cta">View full case study →</span>
+          <a class="featured-link" href="#maison">View case study ↓</a>
         </div>
       </div>
     </div>
 
     <!-- PROJECT LIST -->
     <div class="projects-list">
-      <div
-        class="project-row reveal"
-        onclick="openModal('echo')"
-        data-category="digital"
-      >
+      <a class="project-row" href="#echo">
         <span class="proj-num">02</span>
         <div class="proj-thumb">
           <img
-            src="img/photo-1517694712202-14dd9538aa97.avif"
+            src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=200&q=75&auto=format&fit=crop"
             alt="Echo Studio"
           />
         </div>
@@ -104,22 +166,17 @@
           <h3 class="proj-name">
             Echo Studio — Web Design &amp; Digital Platform
           </h3>
-          <p class="proj-meta">Digital Experience · New York, United States</p>
+          <p class="proj-meta">Digital Experience · Lyon, France</p>
         </div>
         <span class="proj-tag">Digital</span>
         <span class="proj-year">2024</span>
-        <span class="proj-arrow">→</span>
-      </div>
+      </a>
 
-      <div
-        class="project-row reveal"
-        onclick="openModal('verde')"
-        data-category="editorial"
-      >
+      <a class="project-row" href="#verde">
         <span class="proj-num">03</span>
         <div class="proj-thumb">
           <img
-            src="img/photo-1504711434969-e33886168f5c.avif"
+            src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=200&q=75&auto=format&fit=crop"
             alt="Verde Magazine"
           />
         </div>
@@ -129,18 +186,13 @@
         </div>
         <span class="proj-tag">Editorial</span>
         <span class="proj-year">2023</span>
-        <span class="proj-arrow">→</span>
-      </div>
+      </a>
 
-      <div
-        class="project-row reveal"
-        onclick="openModal('kira')"
-        data-category="packaging"
-      >
+      <a class="project-row" href="#kira">
         <span class="proj-num">04</span>
         <div class="proj-thumb">
           <img
-            src="img/photo-1612817288484-6f916006741a.avif"
+            src="https://images.unsplash.com/photo-1612817288484-6f916006741a?w=200&q=75&auto=format&fit=crop"
             alt="Kira Botanicals"
           />
         </div>
@@ -150,18 +202,13 @@
         </div>
         <span class="proj-tag">Packaging</span>
         <span class="proj-year">2023</span>
-        <span class="proj-arrow">→</span>
-      </div>
+      </a>
 
-      <div
-        class="project-row reveal"
-        onclick="openModal('arc')"
-        data-category="motion"
-      >
+      <a class="project-row" href="#arc">
         <span class="proj-num">05</span>
         <div class="proj-thumb">
           <img
-            src="img/photo-1558618666-fcd25c85cd64.avif"
+            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&q=75&auto=format&fit=crop"
             alt="Arc Systems Motion"
           />
         </div>
@@ -171,18 +218,13 @@
         </div>
         <span class="proj-tag">Motion</span>
         <span class="proj-year">2022</span>
-        <span class="proj-arrow">→</span>
-      </div>
+      </a>
 
-      <div
-        class="project-row reveal"
-        onclick="openModal('soleil')"
-        data-category="brand"
-      >
+      <a class="project-row" href="#soleil">
         <span class="proj-num">06</span>
         <div class="proj-thumb">
           <img
-            src="img/photo-1523275335684-37898b6baf30.avif"
+            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200&q=75&auto=format&fit=crop"
             alt="Soleil Collective"
           />
         </div>
@@ -194,18 +236,13 @@
         </div>
         <span class="proj-tag">Brand</span>
         <span class="proj-year">2022</span>
-        <span class="proj-arrow">→</span>
-      </div>
+      </a>
 
-      <div
-        class="project-row reveal"
-        onclick="openModal('haus')"
-        data-category="digital editorial"
-      >
+      <a class="project-row" href="#haus">
         <span class="proj-num">07</span>
         <div class="proj-thumb">
           <img
-            src="img/photo-1541512416146-3cf58d6b27cc.avif"
+            src="https://images.unsplash.com/photo-1541512416146-3cf58d6b27cc?w=200&q=75&auto=format&fit=crop"
             alt="Haus Gallery"
           />
         </div>
@@ -217,9 +254,246 @@
         </div>
         <span class="proj-tag">Digital</span>
         <span class="proj-year">2021</span>
-        <span class="proj-arrow">→</span>
-      </div>
+      </a>
     </div>
+
+    <!-- PROJECT DETAIL SECTIONS (replace modals) -->
+    <section id="maison" class="project-detail">
+      <div class="detail-visual">
+        <img
+          src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=1200&q=85&auto=format&fit=crop"
+          alt="Maison Duval"
+        />
+      </div>
+      <div>
+        <p class="detail-cat">Brand Identity · 2024</p>
+        <h2 class="detail-title">Maison Duval — Luxury Rebranding</h2>
+        <p class="detail-desc">
+          A complete visual identity overhaul for a century-old Parisian
+          patisserie entering a new era. The project encompassed logo redesign,
+          packaging, in-store experience, and digital touchpoints — all unified
+          by a restrained, elegant visual language rooted in the brand's
+          heritage.
+        </p>
+        <p class="detail-challenge-label">The Challenge</p>
+        <p class="detail-challenge">
+          The central challenge was honouring 100 years of history without
+          becoming a museum piece. We needed a system that felt genuinely
+          contemporary while making clear that this was a brand with deep roots
+          and serious craft.
+        </p>
+        <div class="detail-tags">
+          <span class="detail-tag">Brand Strategy</span>
+          <span class="detail-tag">Logo Design</span>
+          <span class="detail-tag">Packaging</span>
+          <span class="detail-tag">Typography</span>
+          <span class="detail-tag">Brand Guidelines</span>
+          <span class="detail-tag">Store Design</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="echo" class="project-detail">
+      <div class="detail-visual">
+        <img
+          src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=85&auto=format&fit=crop"
+          alt="Echo Studio"
+        />
+      </div>
+      <div>
+        <p class="detail-cat">Digital Experience · 2024</p>
+        <h2 class="detail-title">Echo Studio — Web Design</h2>
+        <p class="detail-desc">
+          A portfolio and booking platform for an independent music studio in
+          Lyon. The design balances the raw energy of the recording environment
+          with a refined, editorial aesthetic — featuring full-screen audio
+          visualisations, seamless session booking, and an immersive soundscape.
+        </p>
+        <p class="detail-challenge-label">The Challenge</p>
+        <p class="detail-challenge">
+          Echo had an incredible physical space but no digital presence worth
+          the rooms. The brief was to create a site that felt like walking into
+          the studio — warm, analogue, serious about sound.
+        </p>
+        <div class="detail-tags">
+          <span class="detail-tag">Web Design</span>
+          <span class="detail-tag">UI/UX</span>
+          <span class="detail-tag">Interaction Design</span>
+          <span class="detail-tag">Figma</span>
+          <span class="detail-tag">Art Direction</span>
+          <span class="detail-tag">Webflow</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="verde" class="project-detail">
+      <div class="detail-visual">
+        <img
+          src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200&q=85&auto=format&fit=crop"
+          alt="Verde Magazine"
+        />
+      </div>
+      <div>
+        <p class="detail-cat">Editorial Design · 2023</p>
+        <h2 class="detail-title">Verde Magazine — Issue 12</h2>
+        <p class="detail-desc">
+          Art direction for Verde's annual sustainability issue. The brief
+          called for a tension between the urgency of ecological messaging and
+          the timeless beauty of long-form editorial. The result was a 128-page
+          issue that felt both politically charged and visually meditative.
+        </p>
+        <p class="detail-challenge-label">The Challenge</p>
+        <p class="detail-challenge">
+          Issue 12 was Verde's highest-profile issue to date. We had to make
+          design choices that felt urgent without tipping into alarmism — a
+          tonal tightrope that informed every typographic and compositional
+          decision.
+        </p>
+        <div class="detail-tags">
+          <span class="detail-tag">Editorial</span>
+          <span class="detail-tag">Art Direction</span>
+          <span class="detail-tag">Print Design</span>
+          <span class="detail-tag">Typography</span>
+          <span class="detail-tag">Photography Direction</span>
+          <span class="detail-tag">InDesign</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="kira" class="project-detail">
+      <div class="detail-visual">
+        <img
+          src="https://images.unsplash.com/photo-1612817288484-6f916006741a?w=1200&q=85&auto=format&fit=crop"
+          alt="Kira Botanicals"
+        />
+      </div>
+      <div>
+        <p class="detail-cat">Packaging Design · 2023</p>
+        <h2 class="detail-title">Kira Botanicals — Packaging System</h2>
+        <p class="detail-desc">
+          A complete packaging overhaul for a sustainable skincare brand rooted
+          in botanical science. The system needed to communicate purity and
+          efficacy without clinical coldness — so we developed an organic
+          illustration language, earthy palette, and typography that felt
+          handcrafted yet precise.
+        </p>
+        <p class="detail-challenge-label">The Challenge</p>
+        <p class="detail-challenge">
+          Kira's original packaging looked like every other "natural" skincare
+          brand — beige, generic, forgettable. The rebrand needed to signal
+          scientific credibility and sensory richness simultaneously.
+        </p>
+        <div class="detail-tags">
+          <span class="detail-tag">Packaging</span>
+          <span class="detail-tag">Brand Identity</span>
+          <span class="detail-tag">Illustration Direction</span>
+          <span class="detail-tag">Print Production</span>
+          <span class="detail-tag">Colour Systems</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="arc" class="project-detail">
+      <div class="detail-visual">
+        <img
+          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=85&auto=format&fit=crop"
+          alt="Arc Systems"
+        />
+      </div>
+      <div>
+        <p class="detail-cat">Motion Design · 2022</p>
+        <h2 class="detail-title">Arc Systems — Kinetic Brand Identity</h2>
+        <p class="detail-desc">
+          A kinetic brand identity for an architecture software company. The
+          motion system — comprising animated logos, UI transitions, and a full
+          suite of video assets — translates the brand's core idea of
+          "structures in motion" into a living, breathing visual language.
+        </p>
+        <p class="detail-challenge-label">The Challenge</p>
+        <p class="detail-challenge">
+          Arc had a strong static identity but no motion language. We built a
+          motion system from scratch that could scale from a two-second logo
+          sting to a five-minute brand film.
+        </p>
+        <div class="detail-tags">
+          <span class="detail-tag">Motion Design</span>
+          <span class="detail-tag">Brand Identity</span>
+          <span class="detail-tag">After Effects</span>
+          <span class="detail-tag">Cinema 4D</span>
+          <span class="detail-tag">Brand System</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="soleil" class="project-detail">
+      <div class="detail-visual">
+        <img
+          src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1200&q=85&auto=format&fit=crop"
+          alt="Soleil Collective"
+        />
+      </div>
+      <div>
+        <p class="detail-cat">Brand Identity · 2022</p>
+        <h2 class="detail-title">Soleil Collective — Brand &amp; Campaign</h2>
+        <p class="detail-desc">
+          A complete brand identity and launch campaign for a Marseille-based
+          creative collective spanning fashion, photography, and music. The
+          visual language draws on Mediterranean light, raw concrete, and the
+          energy of the city's emerging cultural scene.
+        </p>
+        <p class="detail-challenge-label">The Challenge</p>
+        <p class="detail-challenge">
+          Soleil needed to feel rooted in Marseille — not generic "Southern
+          France" — and to speak to a young, culturally literate audience
+          without alienating the wider collaborators they needed to sustain the
+          collective.
+        </p>
+        <div class="detail-tags">
+          <span class="detail-tag">Brand Identity</span>
+          <span class="detail-tag">Campaign Design</span>
+          <span class="detail-tag">Art Direction</span>
+          <span class="detail-tag">Poster Design</span>
+          <span class="detail-tag">Social Media System</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="haus" class="project-detail">
+      <div class="detail-visual">
+        <img
+          src="https://images.unsplash.com/photo-1541512416146-3cf58d6b27cc?w=1200&q=85&auto=format&fit=crop"
+          alt="Haus Gallery"
+        />
+      </div>
+      <div>
+        <p class="detail-cat">Digital + Editorial · 2021</p>
+        <h2 class="detail-title">
+          Haus Gallery — Exhibition Identity &amp; Web
+        </h2>
+        <p class="detail-desc">
+          Exhibition identity and digital presence for a contemporary art
+          gallery in Vienna, covering a three-season programme of international
+          artists. The visual system needed to recede enough to foreground the
+          art, while asserting enough presence to position the gallery as a
+          serious institution.
+        </p>
+        <p class="detail-challenge-label">The Challenge</p>
+        <p class="detail-challenge">
+          The tension between institution and artwork is one of the fundamental
+          problems of gallery design. We resolved it by building a deliberately
+          quiet system — a white space of a brand — that comes alive in the
+          spaces between the work.
+        </p>
+        <div class="detail-tags">
+          <span class="detail-tag">Exhibition Identity</span>
+          <span class="detail-tag">Web Design</span>
+          <span class="detail-tag">Editorial</span>
+          <span class="detail-tag">Print</span>
+          <span class="detail-tag">Wayfinding</span>
+          <span class="detail-tag">Figma</span>
+        </div>
+      </div>
+    </section>
 
     <!-- FOOTER -->
     <footer>
@@ -231,26 +505,5 @@
       </ul>
       <span>© 2026 — All rights reserved</span>
     </footer>
-
-    <!-- MODAL -->
-    <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
-      <div class="modal">
-        <button class="modal-close" onclick="closeModalDirect()">✕</button>
-        <div class="modal-visual" id="modalVisual">
-          <img id="modalImg" src="" alt="" />
-          <div class="modal-visual-overlay"></div>
-          <span class="modal-visual-label" id="modalVisualLabel"></span>
-        </div>
-        <div class="modal-body">
-          <p class="modal-cat" id="modalCat"></p>
-          <h2 class="modal-title" id="modalTitle"></h2>
-          <p class="modal-desc" id="modalDesc"></p>
-          <div class="modal-challenge" id="modalChallenge"></div>
-          <div class="modal-tags" id="modalTags"></div>
-        </div>
-      </div>
-    </div>
-
-    <script src="nav.js"></script>
   </body>
 </html>

@@ -11,27 +11,37 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="cursor"></div>
-    <div id="cursor-ring"></div>
+    <input type="checkbox" id="nav-toggle" />
 
-    <!-- NAV -->
     <nav id="mainNav">
       <a class="nav-logo" href="index.html">Wujin Kwon</a>
-      <ul class="nav-links" id="navLinks">
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="work.html">Work</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
-      <div class="nav-hamburger" id="hamburger" onclick="toggleMobile()">
+      <label for="nav-toggle" class="nav-hamburger">
         <span></span><span></span><span></span>
-      </div>
+      </label>
     </nav>
+
+    <!-- AVAILABILITY BANNER -->
+    <div class="availability-strip">
+      <div class="avail-left">
+        <div class="avail-dot"></div>
+        <p>
+          <strong>Currently accepting new projects</strong> — limited
+          availability from April 2025
+        </p>
+      </div>
+      <p class="avail-dates">Next opening: April 2025</p>
+    </div>
 
     <!-- SPLIT LAYOUT -->
     <div class="contact-split">
-      <!-- LEFT: info + photo -->
+      <!-- LEFT: photo + info -->
       <div class="contact-left">
         <div class="contact-left-photo">
           <img
@@ -59,7 +69,7 @@
               <div class="contact-detail">
                 <p class="cd-label">Based in</p>
                 <span class="cd-value" style="cursor: default"
-                  >New York, United States · UTC+1</span
+                  >Paris, France · UTC+1</span
                 >
               </div>
               <div class="contact-detail">
@@ -83,96 +93,120 @@
       <div class="contact-right">
         <h2 class="cr-title">Tell me about<br />your project.</h2>
 
-        <div class="form-row">
+        <!-- action="" points to your own server or a form service like Formspree -->
+        <form
+          action="mailto:lea@moreau.design"
+          method="POST"
+          enctype="text/plain"
+        >
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="fName">First name *</label>
+              <input
+                class="form-input"
+                type="text"
+                id="fName"
+                name="first_name"
+                placeholder="Marie"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="lName">Last name *</label>
+              <input
+                class="form-input"
+                type="text"
+                id="lName"
+                name="last_name"
+                placeholder="Dupont"
+                required
+              />
+            </div>
+          </div>
+
           <div class="form-group">
-            <label class="form-label">First name *</label>
+            <label class="form-label" for="fEmail">Email address *</label>
+            <input
+              class="form-input"
+              type="email"
+              id="fEmail"
+              name="email"
+              placeholder="marie@studio.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="fCompany">Company / Studio</label>
             <input
               class="form-input"
               type="text"
-              placeholder="Marie"
-              id="fName"
+              id="fCompany"
+              name="company"
+              placeholder="Studio Dupont"
             />
           </div>
+
           <div class="form-group">
-            <label class="form-label">Last name *</label>
+            <label class="form-label" for="fService">I'm interested in *</label>
+            <select class="form-select" id="fService" name="service" required>
+              <option value="" disabled selected>Select a service</option>
+              <option>Brand Identity</option>
+              <option>Art Direction</option>
+              <option>Digital Design</option>
+              <option>Editorial Design</option>
+              <option>Ongoing Retainer</option>
+              <option>Something else</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="fBudget">Estimated budget</label>
+            <select class="form-select" id="fBudget" name="budget">
+              <option value="" disabled selected>Select a range</option>
+              <option>Under €3,000</option>
+              <option>€3,000 – €8,000</option>
+              <option>€8,000 – €15,000</option>
+              <option>€15,000 – €30,000</option>
+              <option>€30,000+</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="fMessage"
+              >Tell me about your project *</label
+            >
+            <textarea
+              class="form-textarea"
+              id="fMessage"
+              name="message"
+              placeholder="What are you working on? What does success look like for you?"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="fReferral"
+              >How did you find me?</label
+            >
             <input
               class="form-input"
               type="text"
-              placeholder="Dupont"
-              id="lName"
+              id="fReferral"
+              name="referral"
+              placeholder="Instagram, referral, search..."
             />
           </div>
-        </div>
 
-        <div class="form-group">
-          <label class="form-label">Email address *</label>
-          <input
-            class="form-input"
-            type="email"
-            placeholder="marie@studio.com"
-            id="fEmail"
-          />
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Company / Studio</label>
-          <input class="form-input" type="text" placeholder="Studio Dupont" />
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">I'm interested in *</label>
-          <select class="form-select" id="fService">
-            <option value="" disabled selected>Select a service</option>
-            <option>Brand Identity</option>
-            <option>Art Direction</option>
-            <option>Digital Design</option>
-            <option>Editorial Design</option>
-            <option>Ongoing Retainer</option>
-            <option>Something else</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Estimated budget</label>
-          <select class="form-select">
-            <option value="" disabled selected>Select a range</option>
-            <option>Under €3,000</option>
-            <option>€3,000 – €8,000</option>
-            <option>€8,000 – €15,000</option>
-            <option>€15,000 – €30,000</option>
-            <option>€30,000+</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Tell me about your project *</label>
-          <textarea
-            class="form-textarea"
-            placeholder="What are you working on? What does success look like for you?"
-          ></textarea>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">How did you find me?</label>
-          <input
-            class="form-input"
-            type="text"
-            placeholder="Instagram, referral, search..."
-          />
-        </div>
-
-        <button class="form-submit" onclick="submitForm()">
-          Send message <span class="btn-arrow">→</span>
-        </button>
-        <p class="form-note">
-          I read every message personally. You'll hear back within one business
-          day.
-        </p>
-        <div class="form-success" id="formSuccess">
-          ✓ &nbsp; Thank you, <span id="successName"></span>! I've received your
-          message and will be in touch within 24 hours.
-        </div>
+          <button type="submit" class="form-submit">
+            Send message <span class="btn-arrow">→</span>
+          </button>
+          <p class="form-note">
+            I read every message personally. You'll hear back within one
+            business day.
+          </p>
+        </form>
       </div>
     </div>
 
@@ -186,7 +220,5 @@
       </ul>
       <span>© 2026 — All rights reserved</span>
     </footer>
-
-    <script src="nav.js"></script>
   </body>
 </html>

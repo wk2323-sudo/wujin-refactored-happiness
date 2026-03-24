@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wujin Kwon — Designer & Art Director</title>
+    <title>Wujin Kwon — Designer</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap"
       rel="stylesheet"
@@ -11,30 +11,27 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="cursor"></div>
-    <div id="cursor-ring"></div>
+    <!-- CSS hamburger toggle — must be BEFORE nav -->
+    <input type="checkbox" id="nav-toggle" />
 
-    <!-- NAV -->
     <nav id="mainNav">
       <a class="nav-logo" href="index.html">Wujin Kwon</a>
-      <ul class="nav-links" id="navLinks">
+      <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="work.html">Work</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <div class="nav-hamburger" id="hamburger" onclick="toggleMobile()">
+      <label for="nav-toggle" class="nav-hamburger">
         <span></span><span></span><span></span>
-      </div>
+      </label>
     </nav>
 
     <!-- HERO -->
     <section class="hero">
       <div class="hero-left">
-        <p class="hero-eyebrow">
-          Available for projects · New York &amp; Remote
-        </p>
+        <p class="hero-eyebrow">Available for projects · Paris &amp; Remote</p>
         <h1 class="hero-title">
           Crafting<br /><em>visual</em><br />narratives
         </h1>
@@ -69,18 +66,18 @@
     <!-- MARQUEE -->
     <div class="marquee-strip">
       <div class="marquee-track">
-        <span>Brand Identity</span><span class="dot">·</span
-        ><span>Art Direction</span><span class="dot">·</span
-        ><span>Editorial Design</span><span class="dot">·</span
-        ><span>Digital Experiences</span><span class="dot">·</span
-        ><span>Motion Graphics</span><span class="dot">·</span
-        ><span>UX Strategy</span><span class="dot">·</span>
-        <span>Brand Identity</span><span class="dot">·</span
-        ><span>Art Direction</span><span class="dot">·</span
-        ><span>Editorial Design</span><span class="dot">·</span
-        ><span>Digital Experiences</span><span class="dot">·</span
-        ><span>Motion Graphics</span><span class="dot">·</span
-        ><span>UX Strategy</span><span class="dot">·</span>
+        <span>Brand Identity</span><span class="dot">·</span>
+        <span>Art Direction</span><span class="dot">·</span>
+        <span>Editorial Design</span><span class="dot">·</span>
+        <span>Digital Experiences</span><span class="dot">·</span>
+        <span>Motion Graphics</span><span class="dot">·</span>
+        <span>UX Strategy</span><span class="dot">·</span>
+        <span>Brand Identity</span><span class="dot">·</span>
+        <span>Art Direction</span><span class="dot">·</span>
+        <span>Editorial Design</span><span class="dot">·</span>
+        <span>Digital Experiences</span><span class="dot">·</span>
+        <span>Motion Graphics</span><span class="dot">·</span>
+        <span>UX Strategy</span><span class="dot">·</span>
       </div>
     </div>
 
@@ -91,7 +88,7 @@
         <h2 class="sec-title">Recent Projects</h2>
       </div>
       <div class="home-preview-grid reveal">
-        <div class="home-proj" onclick="openModal('maison')">
+        <a class="home-proj" href="work.html">
           <img
             src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800&q=80&auto=format&fit=crop"
             alt="Maison Duval Brand Identity"
@@ -100,8 +97,8 @@
             <p class="home-proj-cat">Brand Identity</p>
             <h3 class="home-proj-name">Maison Duval</h3>
           </div>
-        </div>
-        <div class="home-proj" onclick="openModal('echo')">
+        </a>
+        <a class="home-proj" href="work.html">
           <img
             src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80&auto=format&fit=crop"
             alt="Echo Studio Digital"
@@ -110,8 +107,8 @@
             <p class="home-proj-cat">Digital Experience</p>
             <h3 class="home-proj-name">Echo Studio</h3>
           </div>
-        </div>
-        <div class="home-proj" onclick="openModal('verde')">
+        </a>
+        <a class="home-proj" href="work.html">
           <img
             src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80&auto=format&fit=crop"
             alt="Verde Magazine Editorial"
@@ -120,8 +117,8 @@
             <p class="home-proj-cat">Editorial</p>
             <h3 class="home-proj-name">Verde Magazine</h3>
           </div>
-        </div>
-        <div class="home-proj" onclick="openModal('kira')">
+        </a>
+        <a class="home-proj" href="work.html">
           <img
             src="https://images.unsplash.com/photo-1612817288484-6f916006741a?w=800&q=80&auto=format&fit=crop"
             alt="Kira Botanicals Packaging"
@@ -130,15 +127,15 @@
             <p class="home-proj-cat">Packaging</p>
             <h3 class="home-proj-name">Kira Botanicals</h3>
           </div>
-        </div>
+        </a>
       </div>
-      <div class="reveal" style="margin-top: 32px">
+      <div style="margin-top: 32px">
         <a class="home-see-all" href="work.html">See all projects →</a>
       </div>
     </section>
 
     <!-- ABOUT STRIP -->
-    <section class="home-about-strip reveal">
+    <section class="home-about-strip">
       <div>
         <p class="strip-label">About Me</p>
         <h2 class="strip-title">Design with<br /><em>intention</em></h2>
@@ -169,7 +166,7 @@
 
     <!-- FOOTER -->
     <footer>
-      <a class="footer-logo" href="index1.html">Wujin Kwon</a>
+      <a class="footer-logo" href="index.html">Wujin Kwon</a>
       <ul class="footer-links">
         <li><a href="#">Instagram</a></li>
         <li><a href="#">Behance</a></li>
@@ -177,26 +174,5 @@
       </ul>
       <span>© 2026 — All rights reserved</span>
     </footer>
-
-    <!-- MODAL -->
-    <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
-      <div class="modal">
-        <button class="modal-close" onclick="closeModalDirect()">✕</button>
-        <div class="modal-visual" id="modalVisual">
-          <img id="modalImg" src="" alt="" />
-          <div class="modal-visual-overlay"></div>
-          <span class="modal-visual-label" id="modalVisualLabel"></span>
-        </div>
-        <div class="modal-body">
-          <p class="modal-cat" id="modalCat"></p>
-          <h2 class="modal-title" id="modalTitle"></h2>
-          <p class="modal-desc" id="modalDesc"></p>
-          <div class="modal-challenge" id="modalChallenge"></div>
-          <div class="modal-tags" id="modalTags"></div>
-        </div>
-      </div>
-    </div>
-
-    <script src="nav.js"></script>
   </body>
 </html>
