@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Work — Wujin Kwon</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- NAV -->
+    <nav id="mainNav">
+      <a class="nav-logo" href="index.html">Wujin Kwon</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html" class="active">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-hamburger" id="hamburger" onclick="toggleMobile()">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="work-hero">
+      <p class="page-label reveal">Portfolio</p>
+      <h1 class="page-h1 reveal"><em>Selected</em><br />Work</h1>
+      <p class="work-hero-sub reveal">
+        Five years of collaboration with forward-thinking brands, cultural
+        institutions, and studios across Europe and beyond. Every project begins
+        with listening.
+      </p>
+    </section>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar reveal" id="filterBar">
+      <button class="filter-btn active" data-filter="all">All Work</button>
+      <button class="filter-btn" data-filter="brand">Brand Identity</button>
+      <button class="filter-btn" data-filter="digital">Digital</button>
+      <button class="filter-btn" data-filter="editorial">Editorial</button>
+      <button class="filter-btn" data-filter="packaging">Packaging</button>
+      <button class="filter-btn" data-filter="motion">Motion</button>
+    </div>
+
+    <!-- FEATURED PROJECT -->
+    <div
+      class="featured-project reveal"
+      onclick="openModal('maison')"
+      data-category="brand"
+    >
+      <div class="featured-visual">
+        <img
+          src="img/photo-1586717791821-3f44a563fa4c.avif"
+          alt="Maison Duval brand identity project"
+        />
+      </div>
+      <div class="featured-info">
+        <div>
+          <span class="featured-badge">Featured Project</span>
+          <h2 class="featured-title">Maison Duval — Luxury Rebranding</h2>
+          <p class="featured-desc">
+            A complete identity overhaul for a century-old Parisian patisserie.
+            Every touchpoint — from the embossed letterhead to the bespoke
+            typeface — was designed to honour the brand's heritage while opening
+            it to a new generation of admirers.
+          </p>
+        </div>
+        <div>
+          <div class="featured-deliverables">
+            <span class="deliverable">Brand Strategy</span>
+            <span class="deliverable">Logo Design</span>
+            <span class="deliverable">Packaging</span>
+            <span class="deliverable">Typography</span>
+            <span class="deliverable">Guidelines</span>
+          </div>
+          <span class="featured-cta">View full case study →</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT LIST -->
+    <div class="projects-list">
+      <div
+        class="project-row reveal"
+        onclick="openModal('echo')"
+        data-category="digital"
+      >
+        <span class="proj-num">02</span>
+        <div class="proj-thumb">
+          <img
+            src="img/photo-1517694712202-14dd9538aa97.avif"
+            alt="Echo Studio"
+          />
+        </div>
+        <div class="proj-info">
+          <h3 class="proj-name">
+            Echo Studio — Web Design &amp; Digital Platform
+          </h3>
+          <p class="proj-meta">Digital Experience · New York, United States</p>
+        </div>
+        <span class="proj-tag">Digital</span>
+        <span class="proj-year">2024</span>
+        <span class="proj-arrow">→</span>
+      </div>
+
+      <div
+        class="project-row reveal"
+        onclick="openModal('verde')"
+        data-category="editorial"
+      >
+        <span class="proj-num">03</span>
+        <div class="proj-thumb">
+          <img
+            src="img/photo-1504711434969-e33886168f5c.avif"
+            alt="Verde Magazine"
+          />
+        </div>
+        <div class="proj-info">
+          <h3 class="proj-name">Verde Magazine — Issue 12 Art Direction</h3>
+          <p class="proj-meta">Editorial Design · Paris, France</p>
+        </div>
+        <span class="proj-tag">Editorial</span>
+        <span class="proj-year">2023</span>
+        <span class="proj-arrow">→</span>
+      </div>
+
+      <div
+        class="project-row reveal"
+        onclick="openModal('kira')"
+        data-category="packaging"
+      >
+        <span class="proj-num">04</span>
+        <div class="proj-thumb">
+          <img
+            src="img/photo-1612817288484-6f916006741a.avif"
+            alt="Kira Botanicals"
+          />
+        </div>
+        <div class="proj-info">
+          <h3 class="proj-name">Kira Botanicals — Complete Packaging System</h3>
+          <p class="proj-meta">Packaging Design · Amsterdam, NL</p>
+        </div>
+        <span class="proj-tag">Packaging</span>
+        <span class="proj-year">2023</span>
+        <span class="proj-arrow">→</span>
+      </div>
+
+      <div
+        class="project-row reveal"
+        onclick="openModal('arc')"
+        data-category="motion"
+      >
+        <span class="proj-num">05</span>
+        <div class="proj-thumb">
+          <img
+            src="img/photo-1558618666-fcd25c85cd64.avif"
+            alt="Arc Systems Motion"
+          />
+        </div>
+        <div class="proj-info">
+          <h3 class="proj-name">Arc Systems — Kinetic Brand Identity</h3>
+          <p class="proj-meta">Motion Design · Berlin, Germany</p>
+        </div>
+        <span class="proj-tag">Motion</span>
+        <span class="proj-year">2022</span>
+        <span class="proj-arrow">→</span>
+      </div>
+
+      <div
+        class="project-row reveal"
+        onclick="openModal('soleil')"
+        data-category="brand"
+      >
+        <span class="proj-num">06</span>
+        <div class="proj-thumb">
+          <img
+            src="img/photo-1523275335684-37898b6baf30.avif"
+            alt="Soleil Collective"
+          />
+        </div>
+        <div class="proj-info">
+          <h3 class="proj-name">
+            Soleil Collective — Brand Identity &amp; Campaign
+          </h3>
+          <p class="proj-meta">Brand Identity · Marseille, France</p>
+        </div>
+        <span class="proj-tag">Brand</span>
+        <span class="proj-year">2022</span>
+        <span class="proj-arrow">→</span>
+      </div>
+
+      <div
+        class="project-row reveal"
+        onclick="openModal('haus')"
+        data-category="digital editorial"
+      >
+        <span class="proj-num">07</span>
+        <div class="proj-thumb">
+          <img
+            src="img/photo-1541512416146-3cf58d6b27cc.avif"
+            alt="Haus Gallery"
+          />
+        </div>
+        <div class="proj-info">
+          <h3 class="proj-name">
+            Haus Gallery — Exhibition Identity &amp; Web
+          </h3>
+          <p class="proj-meta">Digital + Editorial · Vienna, Austria</p>
+        </div>
+        <span class="proj-tag">Digital</span>
+        <span class="proj-year">2021</span>
+        <span class="proj-arrow">→</span>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <a class="footer-logo" href="index.html">Wujin Kwon</a>
+      <ul class="footer-links">
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Behance</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+      <span>© 2026 — All rights reserved</span>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+      <div class="modal">
+        <button class="modal-close" onclick="closeModalDirect()">✕</button>
+        <div class="modal-visual" id="modalVisual">
+          <img id="modalImg" src="" alt="" />
+          <div class="modal-visual-overlay"></div>
+          <span class="modal-visual-label" id="modalVisualLabel"></span>
+        </div>
+        <div class="modal-body">
+          <p class="modal-cat" id="modalCat"></p>
+          <h2 class="modal-title" id="modalTitle"></h2>
+          <p class="modal-desc" id="modalDesc"></p>
+          <div class="modal-challenge" id="modalChallenge"></div>
+          <div class="modal-tags" id="modalTags"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="nav.js"></script>
+  </body>
+</html>

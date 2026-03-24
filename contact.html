@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Wujin Kwon</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- NAV -->
+    <nav id="mainNav">
+      <a class="nav-logo" href="index.html">Wujin Kwon</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="nav-hamburger" id="hamburger" onclick="toggleMobile()">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+
+    <!-- SPLIT LAYOUT -->
+    <div class="contact-split">
+      <!-- LEFT: info + photo -->
+      <div class="contact-left">
+        <div class="contact-left-photo">
+          <img
+            src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1200&q=85&auto=format&fit=crop"
+            alt="Paris, France"
+          />
+        </div>
+        <div class="contact-left-overlay"></div>
+        <div class="contact-left-content">
+          <div class="cl-top">
+            <p class="page-label" style="color: var(--gold)">Get in touch</p>
+            <h1>Let's make<br />something<br /><em>beautiful.</em></h1>
+            <p>
+              Whether you have a detailed brief ready or just the seed of an
+              idea, I'd love to hear from you. I typically respond within 24
+              hours on working days.
+            </p>
+            <div class="contact-details">
+              <div class="contact-detail">
+                <p class="cd-label">Email</p>
+                <a href="mailto:lea@moreau.design" class="cd-value"
+                  >wk2323@nyu.edu</a
+                >
+              </div>
+              <div class="contact-detail">
+                <p class="cd-label">Based in</p>
+                <span class="cd-value" style="cursor: default"
+                  >New York, United States · UTC+1</span
+                >
+              </div>
+              <div class="contact-detail">
+                <p class="cd-label">Working hours</p>
+                <span class="cd-value" style="cursor: default; font-size: 16px"
+                  >Mon – Fri, 9am – 6pm CET</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="cl-social">
+            <a href="#">Instagram</a>
+            <a href="#">Behance</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Dribbble</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: form -->
+      <div class="contact-right">
+        <h2 class="cr-title">Tell me about<br />your project.</h2>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First name *</label>
+            <input
+              class="form-input"
+              type="text"
+              placeholder="Marie"
+              id="fName"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last name *</label>
+            <input
+              class="form-input"
+              type="text"
+              placeholder="Dupont"
+              id="lName"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Email address *</label>
+          <input
+            class="form-input"
+            type="email"
+            placeholder="marie@studio.com"
+            id="fEmail"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Company / Studio</label>
+          <input class="form-input" type="text" placeholder="Studio Dupont" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">I'm interested in *</label>
+          <select class="form-select" id="fService">
+            <option value="" disabled selected>Select a service</option>
+            <option>Brand Identity</option>
+            <option>Art Direction</option>
+            <option>Digital Design</option>
+            <option>Editorial Design</option>
+            <option>Ongoing Retainer</option>
+            <option>Something else</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Estimated budget</label>
+          <select class="form-select">
+            <option value="" disabled selected>Select a range</option>
+            <option>Under €3,000</option>
+            <option>€3,000 – €8,000</option>
+            <option>€8,000 – €15,000</option>
+            <option>€15,000 – €30,000</option>
+            <option>€30,000+</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Tell me about your project *</label>
+          <textarea
+            class="form-textarea"
+            placeholder="What are you working on? What does success look like for you?"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">How did you find me?</label>
+          <input
+            class="form-input"
+            type="text"
+            placeholder="Instagram, referral, search..."
+          />
+        </div>
+
+        <button class="form-submit" onclick="submitForm()">
+          Send message <span class="btn-arrow">→</span>
+        </button>
+        <p class="form-note">
+          I read every message personally. You'll hear back within one business
+          day.
+        </p>
+        <div class="form-success" id="formSuccess">
+          ✓ &nbsp; Thank you, <span id="successName"></span>! I've received your
+          message and will be in touch within 24 hours.
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <a class="footer-logo" href="index.html">Wujin Kwon</a>
+      <ul class="footer-links">
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Behance</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+      <span>© 2026 — All rights reserved</span>
+    </footer>
+
+    <script src="nav.js"></script>
+  </body>
+</html>
