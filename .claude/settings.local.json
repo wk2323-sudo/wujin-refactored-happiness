@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node --check /Users/wujinkwon/healii/js/main.js)",
+      "Bash(python3 -m http.server 8765)",
+      "Bash(echo \"started, pid=$!\")",
+      "Bash(curl -s -o /dev/null -w \"index.html: %{http_code}\\\\n\" http://localhost:8765/index.html)",
+      "Bash(curl -s -o /dev/null -w \"css/style.css: %{http_code}\\\\n\" http://localhost:8765/css/style.css)",
+      "Bash(curl -s -o /dev/null -w \"js/main.js: %{http_code}\\\\n\" http://localhost:8765/js/main.js)",
+      "Bash(kill 72535)"
+    ]
+  }
+}

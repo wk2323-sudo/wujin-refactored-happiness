@@ -1,0 +1,1133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healii — Discover Your Health Identity</title>
+    <meta
+      name="description"
+      content="AI-powered personalized wellness for college students. Discover your Health Identity and get your custom vitamin pack."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!--  NAVBAR  -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="#" class="nav-logo">
+          <span class="logo-mark">✦</span>
+          <span>Healii</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#identities">Identities</a></li>
+          <li><a href="#social">Community</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="#" class="btn btn-ghost nav-login" id="loginBtn">Log In</a>
+          <button class="btn btn-primary" id="navQuizBtn">
+            Find My Identity
+          </button>
+          <div class="profile-menu" id="profileMenu" hidden>
+            <button class="profile-trigger" id="profileTrigger">
+              <span class="profile-av" id="profileAv">U</span>
+              <span class="profile-name" id="profileName">User</span>
+              <span class="profile-caret">▾</span>
+            </button>
+            <div class="profile-drop" id="profileDrop">
+              <button class="pd-item" data-action="dashboard">📊 Dashboard</button>
+              <button class="pd-item" data-action="identity">✨ My Identity</button>
+              <button class="pd-item" data-action="orders">📦 My Orders</button>
+              <button class="pd-item" data-action="logout">↩ Logout</button>
+            </div>
+          </div>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="mobile-nav" id="mobileNav">
+        <ul>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#identities">Identities</a></li>
+          <li><a href="#social">Community</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <div class="mobile-nav-actions">
+          <a href="#" class="btn btn-ghost btn-full" id="mobileLoginBtn">Log In</a>
+        </div>
+        <button class="btn btn-primary btn-full" id="mobileQuizBtn">
+          Find My Identity →
+        </button>
+      </div>
+    </nav>
+
+    <!--  HERO  -->
+    <section class="hero" id="hero">
+      <div class="hero-bg">
+        <div class="orb orb-purple"></div>
+        <div class="orb orb-cyan"></div>
+        <div class="orb orb-green"></div>
+        <div class="grid-overlay"></div>
+      </div>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-pulse"></span>
+            <span>Trusted by 12,400+ students</span>
+          </div>
+          <h1 class="hero-title">
+            Your Body Has<br />
+            a Unique<br />
+            <span class="gradient-text">Identity.</span>
+          </h1>
+          <p class="hero-sub">
+            Stop taking random supplements. Healii's AI analyzes your lifestyle,
+            assigns your personal Health Identity, and delivers a curated
+            vitamin pack — built exactly for you. Continuously.
+          </p>
+          <div class="hero-ctas">
+            <button class="btn btn-primary btn-xl" id="heroQuizBtn">
+              Discover My Identity
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+            <a href="#how-it-works" class="btn btn-ghost btn-xl"
+              >See How It Works</a
+            >
+          </div>
+          <div class="hero-proof">
+            <div class="proof-avatars">
+              <span class="av" style="--c:#8B5CF6">A</span>
+              <span class="av" style="--c:#06B6D4">M</span>
+              <span class="av" style="--c:#10B981">J</span>
+              <span class="av" style="--c:#F59E0B">K</span>
+            </div>
+            <p>Joined by <strong>2,300+</strong> students this week</p>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="id-stage">
+            <div class="id-card main-card" id="heroMainCard">
+              <div class="idc-glow"></div>
+              <div class="idc-top">
+                <span class="idc-emoji">🦉</span>
+                <div class="idc-match">94% Match</div>
+              </div>
+              <h3 class="idc-name">Night Owl</h3>
+              <p class="idc-tagline">Sleep · Recovery · Calm</p>
+              <div class="idc-pills">
+                <span>Magnesium</span>
+                <span>Melatonin</span>
+                <span>L-Theanine</span>
+              </div>
+            </div>
+            <div class="id-card float-card fc-1">
+              <span class="fc-emoji">⚡</span>
+              <span class="fc-name">Grinder</span>
+            </div>
+            <div class="id-card float-card fc-2">
+              <span class="fc-emoji">🧠</span>
+              <span class="fc-name">Scholar</span>
+            </div>
+            <div class="id-card float-card fc-3">
+              <span class="fc-emoji">🧘</span>
+              <span class="fc-name">Zen Seeker</span>
+            </div>
+            <div class="id-card float-card fc-4">
+              <span class="fc-emoji">💪</span>
+              <span class="fc-name">Athlete</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--  STATS  -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-num-wrap">
+              <span class="stat-num" data-target="60">0</span
+              ><span class="stat-unit">%</span>
+            </div>
+            <p>of college students report chronic fatigue</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num-wrap">
+              <span class="stat-num" data-target="73">0</span
+              ><span class="stat-unit">%</span>
+            </div>
+            <p>want to improve health but lack direction</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num-wrap">
+              <span class="stat-num" data-target="16">0</span
+              ><span class="stat-unit">+</span>
+            </div>
+            <p>unique Health Identities to discover</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num-wrap">
+              <span class="stat-num" data-target="94">0</span
+              ><span class="stat-unit">%</span>
+            </div>
+            <p>of users see improvement within 30 days</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--  HOW IT WORKS  -->
+    <section class="section how-it-works" id="how-it-works">
+      <div class="container">
+        <div class="section-hd reveal">
+          <span class="tag">The Process</span>
+          <h2>
+            From Quiz to<br /><span class="gradient-text"
+              >Your Perfect Pack</span
+            >
+          </h2>
+        </div>
+        <div class="steps">
+          <div class="step-track"></div>
+          <div class="step reveal">
+            <div class="step-node">
+              <div class="step-num">01</div>
+              <div class="step-icon-box">📋</div>
+            </div>
+            <div class="step-body">
+              <h3>Lifestyle Assessment</h3>
+              <p>
+                An 8-question quiz captures your sleep, diet, stress, exercise, and
+                academic workload. Optionally upload meal photos for deeper
+                computer vision analysis.
+              </p>
+              <div class="tag-row">
+                <span>Sleep Patterns</span><span>Diet Habits</span
+                ><span>Stress Levels</span><span>Exercise</span>
+              </div>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="step-node">
+              <div class="step-num">02</div>
+              <div class="step-icon-box">🤖</div>
+            </div>
+            <div class="step-body">
+              <h3>Multimodal AI Analysis</h3>
+              <p>
+                Our AI processes behavioral patterns and computer vision data to
+                build a uniquely accurate picture of your needs — all processed
+                on-device for complete privacy.
+              </p>
+              <div class="tag-row">
+                <span>Multimodal AI</span><span>Computer Vision</span
+                ><span>Edge Processing</span>
+              </div>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="step-node">
+              <div class="step-num">03</div>
+              <div class="step-icon-box">✨</div>
+            </div>
+            <div class="step-body">
+              <h3>Your Health Identity</h3>
+              <p>
+                You're assigned one of 16 dynamic Health Identities — a
+                shareable wellness archetype that evolves daily as your habits
+                change. Think MBTI, but for your body.
+              </p>
+              <div class="tag-row">
+                <span>16 Archetypes</span><span>Daily Updates</span
+                ><span>Shareable</span>
+              </div>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="step-node">
+              <div class="step-num">04</div>
+              <div class="step-icon-box">📦</div>
+            </div>
+            <div class="step-body">
+              <h3>Personalized Pack, Monthly</h3>
+              <p>
+                Receive your custom vitamin pack monthly ($19.99–$24.99),
+                curated from Thorne, Garden of Life, and iHerb. Your pack
+                updates as your identity evolves.
+              </p>
+              <div class="tag-row">
+                <span>Monthly Delivery</span><span>Top Brands</span
+                ><span>Adapts in Real-Time</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--  HEALTH IDENTITIES  -->
+    <section class="section identities-section" id="identities">
+      <div class="container">
+        <div class="section-hd reveal">
+          <span class="tag">Health Identities</span>
+          <h2>Which One<br /><span class="gradient-text">Are You?</span></h2>
+          <p>16 dynamic archetypes. Yours changes with your lifestyle.</p>
+        </div>
+        <div class="id-toolbar reveal">
+          <div class="id-search">
+            <span class="id-search-ico">🔍</span>
+            <input
+              type="search"
+              id="idSearch"
+              placeholder="Search identities (e.g. Sleep, Athlete, Stress)…"
+              autocomplete="off"
+            />
+          </div>
+          <div class="id-filters" id="idFilters">
+            <button class="id-filter active" data-cat="all">All</button>
+            <button class="id-filter" data-cat="sleep">Sleep</button>
+            <button class="id-filter" data-cat="focus">Focus</button>
+            <button class="id-filter" data-cat="stress">Stress</button>
+            <button class="id-filter" data-cat="energy">Energy</button>
+            <button class="id-filter" data-cat="performance">Performance</button>
+            <button class="id-filter" data-cat="balance">Balance</button>
+          </div>
+        </div>
+        <div class="id-grid" id="idGrid"></div>
+        <p class="id-empty" id="idEmpty" hidden>
+          No identities match your search. Try a different keyword.
+        </p>
+      </div>
+    </section>
+
+    <!--  SOCIAL / COMMUNITY  -->
+    <section class="section social-section" id="social">
+      <div class="container">
+        <div class="social-grid">
+          <div class="social-content reveal">
+            <span class="tag">Campus Community</span>
+            <h2>
+              Health is a<br /><span class="gradient-text">Team Sport.</span>
+            </h2>
+            <p>
+              Healii turns solo wellness into a shared campus experience. Share
+              check-ins, climb leaderboards, and build healthy habits with your
+              peers — for real.
+            </p>
+            <div class="social-feats">
+              <div class="sfeat">
+                <div class="sfeat-icon">📸</div>
+                <div>
+                  <h4>BeReal-style Check-ins</h4>
+                  <p>
+                    Authentic daily wellness moments — meals, workouts, sleep
+                    logs shared with your campus.
+                  </p>
+                </div>
+              </div>
+              <div class="sfeat">
+                <div class="sfeat-icon">🏆</div>
+                <div>
+                  <h4>Campus Leaderboards</h4>
+                  <p>
+                    School vs. school health rankings. Is your campus the
+                    healthiest in the country?
+                  </p>
+                </div>
+              </div>
+              <div class="sfeat">
+                <div class="sfeat-icon">🎁</div>
+                <div>
+                  <h4>Referral Rewards</h4>
+                  <p>
+                    Earn points, character upgrades, and subscription discounts
+                    by bringing friends in.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="social-visual reveal">
+            <div class="lb-card">
+              <div class="lb-hd">
+                <h4>Campus Rankings 🏆</h4>
+                <span class="lb-period">This Week</span>
+              </div>
+              <ul class="lb-list">
+                <li class="lb-row lb-gold">
+                  <span class="lb-rank">🥇</span>
+                  <span class="lb-school">UC Berkeley</span>
+                  <span class="lb-pts">9,420 pts</span>
+                </li>
+                <li class="lb-row lb-silver">
+                  <span class="lb-rank">🥈</span>
+                  <span class="lb-school">NYU</span>
+                  <span class="lb-pts">8,875 pts</span>
+                </li>
+                <li class="lb-row lb-bronze">
+                  <span class="lb-rank">🥉</span>
+                  <span class="lb-school">UCLA</span>
+                  <span class="lb-pts">8,340 pts</span>
+                </li>
+                <li class="lb-row">
+                  <span class="lb-rank">4</span>
+                  <span class="lb-school">UT Austin</span>
+                  <span class="lb-pts">7,920 pts</span>
+                </li>
+                <li class="lb-row lb-you">
+                  <span class="lb-rank">5</span>
+                  <span class="lb-school">Your School ✦</span>
+                  <span class="lb-pts" id="lbYouPts">7,450 pts</span>
+                </li>
+              </ul>
+            </div>
+            <div class="checkins">
+              <div class="ci-card">
+                <div class="ci-hd">
+                  <span class="ci-av" style="--c:#8B5CF6">M</span>
+                  <div>
+                    <strong>Maya · Berkeley</strong>
+                    <span>2h ago · 🦉 Night Owl</span>
+                  </div>
+                </div>
+                <p>Hit 8 hours last night for the first time this semester 🎉</p>
+                <div class="ci-react">❤️ 24 · 💬 3</div>
+              </div>
+              <div class="ci-card">
+                <div class="ci-hd">
+                  <span class="ci-av" style="--c:#10B981">J</span>
+                  <div>
+                    <strong>Jordan · NYU</strong>
+                    <span>4h ago · 💪 Athlete</span>
+                  </div>
+                </div>
+                <p>Day 14 streak. Pre-workout pack making a real difference.</p>
+                <div class="ci-react">❤️ 41 · 💬 7</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--  TESTIMONIALS  -->
+    <section class="section testimonials-section">
+      <div class="container">
+        <div class="section-hd reveal">
+          <span class="tag">Real Results</span>
+          <h2>
+            What Students<br /><span class="gradient-text">Are Saying</span>
+          </h2>
+        </div>
+        <div class="testi-carousel reveal" id="testiCarousel">
+          <div class="testi-track" id="testiTrack">
+            <article class="testi-card">
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-quote">
+                "I always thought I needed coffee to function. Healii flagged
+                me as Caffeine Dependent and the B-Complex pack genuinely
+                changed my afternoons. I haven't crashed at 3pm in weeks."
+              </p>
+              <div class="testi-author">
+                <span class="testi-av" style="--c:#8B5CF6">A</span>
+                <div>
+                  <strong>Amelia R.</strong>
+                  <span>UC Berkeley · Junior</span>
+                </div>
+              </div>
+            </article>
+            <article class="testi-card">
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-quote">
+                "Got pegged as The Scholar during finals. Lion's Mane and
+                Bacopa for two months, my focus during 4-hour study blocks is
+                actually noticeable. My grades reflect it too."
+              </p>
+              <div class="testi-author">
+                <span class="testi-av" style="--c:#06B6D4">D</span>
+                <div>
+                  <strong>Daniel K.</strong>
+                  <span>NYU · Senior</span>
+                </div>
+              </div>
+            </article>
+            <article class="testi-card">
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-quote">
+                "I love that my identity literally evolves. Started as Night
+                Owl, now I'm The Athlete after I joined club soccer. The pack
+                actually adapted with me."
+              </p>
+              <div class="testi-author">
+                <span class="testi-av" style="--c:#10B981">S</span>
+                <div>
+                  <strong>Sofia M.</strong>
+                  <span>UCLA · Sophomore</span>
+                </div>
+              </div>
+            </article>
+            <article class="testi-card">
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-quote">
+                "The campus leaderboard is way more motivating than I expected.
+                I check in every morning just to keep my school in the top 3.
+                Healthy habits as a competition? Yes please."
+              </p>
+              <div class="testi-author">
+                <span class="testi-av" style="--c:#F59E0B">T</span>
+                <div>
+                  <strong>Tyler J.</strong>
+                  <span>UT Austin · Junior</span>
+                </div>
+              </div>
+            </article>
+            <article class="testi-card">
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-quote">
+                "As Zen Seeker, the ashwagandha + rhodiola combo really took
+                the edge off finals week. My sleep also got better as a side
+                effect. Sticking with this."
+              </p>
+              <div class="testi-author">
+                <span class="testi-av" style="--c:#EC4899">P</span>
+                <div>
+                  <strong>Priya N.</strong>
+                  <span>USC · Senior</span>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="testi-controls">
+            <button class="testi-arrow" id="testiPrev" aria-label="Previous">
+              ‹
+            </button>
+            <div class="testi-dots" id="testiDots"></div>
+            <button class="testi-arrow" id="testiNext" aria-label="Next">
+              ›
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--  PRICING  -->
+    <section class="section pricing-section" id="pricing">
+      <div class="container">
+        <div class="section-hd reveal">
+          <span class="tag">Simple Pricing</span>
+          <h2>
+            Start Free.<br /><span class="gradient-text"
+              >Upgrade When Ready.</span
+            >
+          </h2>
+        </div>
+        <div class="pricing-grid">
+          <div class="price-card reveal">
+            <h3>Explorer</h3>
+            <div class="price-val">
+              <span class="price-amt">Free</span>
+            </div>
+            <ul class="price-feats">
+              <li class="on">Health Identity Assessment</li>
+              <li class="on">Basic wellness profile</li>
+              <li class="on">Campus community access</li>
+              <li class="on">Leaderboard participation</li>
+              <li class="on">Partner supplement links</li>
+              <li class="off">Monthly vitamin pack</li>
+              <li class="off">Dynamic identity updates</li>
+              <li class="off">Meal photo AI analysis</li>
+            </ul>
+            <button class="btn btn-outline btn-full" id="getStartedFreeBtn">
+              Get Started Free
+            </button>
+          </div>
+          <div class="price-card price-featured reveal">
+            <div class="price-badge">Most Popular</div>
+            <h3>Identity Pack</h3>
+            <div class="price-val">
+              <span class="price-curr">$</span>
+              <span class="price-amt">19.99</span>
+              <span class="price-per">/mo</span>
+            </div>
+
+            <ul class="price-feats">
+              <li class="on">Everything in Explorer</li>
+              <li class="on"><strong>Monthly personalized pack</strong></li>
+              <li class="on">Dynamic identity updates</li>
+              <li class="on">Meal photo AI analysis</li>
+              <li class="on">Real-time recommendations</li>
+              <li class="on">Priority community features</li>
+              <li class="on">Exclusive identity badges</li>
+              <li class="on">Character upgrades</li>
+            </ul>
+            <button class="btn btn-primary btn-full" data-checkout="identity">
+              Start My Pack
+            </button>
+          </div>
+          <div class="price-card reveal">
+            <h3>Campus Pro</h3>
+            <div class="price-val">
+              <span class="price-curr">$</span>
+              <span class="price-amt">24.99</span>
+              <span class="price-per">/mo</span>
+            </div>
+            <ul class="price-feats">
+              <li class="on">Everything in Identity Pack</li>
+              <li class="on">Premium brand upgrades</li>
+              <li class="on">Ambassador status</li>
+              <li class="on">2× referral multipliers</li>
+              <li class="on">Exclusive tournaments</li>
+              <li class="on">Early identity unlocks</li>
+              <li class="on">1-on-1 wellness check-in</li>
+              <li class="on">Highest-tier rewards</li>
+            </ul>
+            <button class="btn btn-outline btn-full" data-checkout="pro">
+              Go Pro
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--  FAQ  -->
+    <section class="section faq-section" id="faq">
+      <div class="container">
+        <div class="section-hd reveal">
+          <span class="tag">Questions</span>
+          <h2>
+            Frequently<br /><span class="gradient-text">Asked Questions</span>
+          </h2>
+        </div>
+        <div class="faq-list reveal" id="faqList">
+          <details class="faq-item">
+            <summary>
+              <span>How accurate is the Health Identity quiz?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <p>
+              Our 8-question quiz uses a weighted multi-factor model that maps
+              you to one of 16 archetypes. Internal validation shows 89%
+              alignment with extended in-app behavioral analysis after 30 days
+              of tracking.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>Can my Health Identity actually change?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <p>
+              Yes — that's the point. Your identity adapts as your sleep, diet,
+              stress, and exercise patterns evolve. Most users shift archetypes
+              once or twice per semester.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>Where do the supplements come from?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <p>
+              All packs are curated from third-party-tested brands including
+              Thorne, Garden of Life, and iHerb. Every product is GMP-certified
+              and ingredient-traceable.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>Can I pause or cancel my subscription?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <p>
+              Anytime, no questions asked. Pause for a month if you're traveling
+              or studying abroad — your dashboard remembers your identity and
+              picks back up when you return.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>Is my data private?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <p>
+              Yes. Multimodal AI analysis runs on-device wherever possible, and
+              we never sell or share personal health data. You can export or
+              delete everything from your profile settings.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>Do you ship outside the U.S.?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <p>
+              Currently we ship to the U.S. and Canada. International access is
+              rolling out by region in 2026 starting with the UK, Australia,
+              and South Korea.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>What if my pack doesn't work for me?</span>
+              <span class="faq-toggle">+</span>
+            </summary>
+            <p>
+              We offer a 30-day satisfaction guarantee on your first pack. If
+              you don't feel a difference, message us and we'll re-tune your
+              identity assessment or refund you in full.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!--  FINAL CTA  -->
+    <section class="cta-section">
+      <div class="cta-bg">
+        <div class="orb orb-cta-a"></div>
+        <div class="orb orb-cta-b"></div>
+      </div>
+      <div class="container">
+        <div class="cta-inner reveal">
+          <h2>
+            Ready to Discover Your<br /><span class="gradient-text"
+              >Health Identity?</span
+            >
+          </h2>
+          <p>Takes 5 minutes. Free forever. Your pack ships monthly.</p>
+          <button class="btn btn-primary btn-xl" id="ctaQuizBtn">
+            Start My Assessment →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!--  FOOTER  -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="nav-logo">
+              <span class="logo-mark">✦</span><span>Healii</span>
+            </div>
+            <p>
+              AI-powered personalized wellness for the next generation of
+              health-conscious students.
+            </p>
+            <form class="footer-newsletter" id="newsletterForm">
+              <input
+                type="email"
+                id="newsletterEmail"
+                placeholder="your.email@school.edu"
+                required
+              />
+              <button type="submit" class="btn btn-primary btn-sm">
+                Subscribe
+              </button>
+            </form>
+          </div>
+          <div class="footer-col">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="#how-it-works">How It Works</a></li>
+              <li><a href="#identities">Health Identities</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+              <li><a href="#">Campus Program</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 Healii Inc. All rights reserved.</p>
+          <p>Made with ✦ for college students.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!--  QUIZ MODAL  -->
+    <div
+      class="modal quiz-modal"
+      id="quizModal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Health Identity Quiz"
+    >
+      <div class="modal-backdrop" data-close="quizModal"></div>
+      <div class="modal-box quiz-box">
+        <button class="modal-x" data-close="quizModal" aria-label="Close">
+          ✕
+        </button>
+        <div class="quiz-prog">
+          <div class="quiz-prog-bar" id="quizProgBar"></div>
+        </div>
+        <div class="quiz-content" id="quizContent"></div>
+      </div>
+    </div>
+
+    <!--  AUTH MODAL  -->
+    <div
+      class="modal auth-modal"
+      id="authModal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Account"
+    >
+      <div class="modal-backdrop" data-close="authModal"></div>
+      <div class="modal-box auth-box">
+        <button class="modal-x" data-close="authModal" aria-label="Close">
+          ✕
+        </button>
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-tab="login">Log In</button>
+          <button class="auth-tab" data-tab="signup">Sign Up</button>
+        </div>
+        <form class="auth-form" id="loginForm" data-form="login">
+          <h3>Welcome back ✦</h3>
+          <p class="auth-sub">Continue your wellness journey.</p>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required autocomplete="email" />
+          </label>
+          <label>
+            <span>Password</span>
+            <input
+              type="password"
+              name="password"
+              required
+              autocomplete="current-password"
+              minlength="6"
+            />
+          </label>
+          <button type="submit" class="btn btn-primary btn-full">
+            Log In
+          </button>
+          <p class="auth-err" id="loginErr" hidden></p>
+        </form>
+        <form class="auth-form" id="signupForm" data-form="signup" hidden>
+          <h3>Create your account ✦</h3>
+          <p class="auth-sub">Save your identity and track your progress.</p>
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" required autocomplete="name" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required autocomplete="email" />
+          </label>
+          <label>
+            <span>Password</span>
+            <input
+              type="password"
+              name="password"
+              required
+              autocomplete="new-password"
+              minlength="6"
+            />
+          </label>
+          <button type="submit" class="btn btn-primary btn-full">
+            Create Account
+          </button>
+          <p class="auth-err" id="signupErr" hidden></p>
+        </form>
+      </div>
+    </div>
+
+    <!--  DASHBOARD MODAL  -->
+    <div
+      class="modal dash-modal"
+      id="dashModal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Wellness Dashboard"
+    >
+      <div class="modal-backdrop" data-close="dashModal"></div>
+      <div class="modal-box dash-box">
+        <button class="modal-x" data-close="dashModal" aria-label="Close">
+          ✕
+        </button>
+        <div class="dash-header">
+          <div>
+            <span class="tag">Daily Dashboard</span>
+            <h3>
+              Hi <span id="dashName">friend</span> —
+              <span id="dashGreeting">how are you feeling today?</span>
+            </h3>
+          </div>
+          <div class="dash-streak" id="dashStreak">
+            <div class="streak-flame">🔥</div>
+            <div>
+              <strong id="streakDays">0</strong>
+              <span>day streak</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-grid">
+          <div class="dash-card">
+            <div class="dash-card-hd">
+              <h4>💧 Water</h4>
+              <span id="waterCount">0 / 8</span>
+            </div>
+            <div class="water-row" id="waterRow"></div>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-card-hd">
+              <h4>😴 Sleep</h4>
+              <span><span id="sleepVal">7</span>h</span>
+            </div>
+            <input
+              type="range"
+              min="0"
+              max="12"
+              step="0.5"
+              value="7"
+              id="sleepSlider"
+              class="dash-slider"
+            />
+            <p class="dash-help" id="sleepHelp">Right in the sweet spot.</p>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-card-hd"><h4>🧘 Mood</h4></div>
+            <div class="mood-row" id="moodRow">
+              <button class="mood-opt" data-val="1" aria-label="Awful">😣</button>
+              <button class="mood-opt" data-val="2" aria-label="Low">🙁</button>
+              <button class="mood-opt" data-val="3" aria-label="Okay">😐</button>
+              <button class="mood-opt" data-val="4" aria-label="Good">🙂</button>
+              <button class="mood-opt" data-val="5" aria-label="Great">😄</button>
+            </div>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-card-hd">
+              <h4>🏃 Exercise</h4>
+              <span><span id="exerciseVal">0</span> min</span>
+            </div>
+            <input
+              type="range"
+              min="0"
+              max="120"
+              step="5"
+              value="0"
+              id="exerciseSlider"
+              class="dash-slider"
+            />
+            <p class="dash-help" id="exerciseHelp">Every step counts.</p>
+          </div>
+
+          <div class="dash-card dash-card-wide">
+            <div class="dash-card-hd">
+              <h4>📈 Last 7 Days</h4>
+              <span class="dash-chart-legend">
+                <span class="lg-dot lg-water"></span>Water ·
+                <span class="lg-dot lg-sleep"></span>Sleep ·
+                <span class="lg-dot lg-ex"></span>Exercise
+              </span>
+            </div>
+            <canvas
+              id="dashChart"
+              width="720"
+              height="200"
+              class="dash-chart"
+            ></canvas>
+          </div>
+
+          <div class="dash-card dash-card-wide">
+            <div class="dash-card-hd">
+              <h4>🎖 Achievements</h4>
+              <span id="badgeCount">0 unlocked</span>
+            </div>
+            <div class="badge-row" id="badgeRow"></div>
+          </div>
+        </div>
+
+        <div class="dash-footer">
+          <button class="btn btn-ghost" id="dashReset">Clear Today</button>
+          <button class="btn btn-primary" id="dashSave">
+            Save Today's Check-in
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!--  CHECKOUT MODAL  -->
+    <div
+      class="modal checkout-modal"
+      id="checkoutModal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Checkout"
+    >
+      <div class="modal-backdrop" data-close="checkoutModal"></div>
+      <div class="modal-box checkout-box">
+        <button class="modal-x" data-close="checkoutModal" aria-label="Close">
+          ✕
+        </button>
+        <div class="checkout-content" id="checkoutContent">
+          <div class="checkout-step active" data-step="1">
+            <span class="tag">Order Summary</span>
+            <h3 id="coPlanTitle">Identity Pack</h3>
+            <div class="co-summary" id="coSummary"></div>
+            <button class="btn btn-primary btn-full" data-co-next="2">
+              Continue to Shipping →
+            </button>
+          </div>
+          <div class="checkout-step" data-step="2">
+            <span class="tag">Shipping</span>
+            <h3>Where should we send it?</h3>
+            <form id="shippingForm" class="checkout-form">
+              <label
+                ><span>Full Name</span
+                ><input type="text" name="name" required
+              /></label>
+              <label
+                ><span>Address</span
+                ><input type="text" name="address" required
+              /></label>
+              <div class="form-row">
+                <label
+                  ><span>City</span
+                  ><input type="text" name="city" required
+                /></label>
+                <label
+                  ><span>ZIP</span
+                  ><input type="text" name="zip" required pattern="[0-9]{5}"
+                /></label>
+              </div>
+              <div class="checkout-actions">
+                <button
+                  type="button"
+                  class="btn btn-ghost"
+                  data-co-prev="1"
+                >
+                  ← Back
+                </button>
+                <button type="submit" class="btn btn-primary">
+                  Continue to Payment →
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="checkout-step" data-step="3">
+            <span class="tag">Payment</span>
+            <h3>Secure Payment</h3>
+            <form id="paymentForm" class="checkout-form">
+              <label
+                ><span>Card Number</span
+                ><input
+                  type="text"
+                  name="card"
+                  placeholder="4242 4242 4242 4242"
+                  required
+                  inputmode="numeric"
+                  maxlength="19"
+              /></label>
+              <div class="form-row">
+                <label
+                  ><span>Expiry (MM/YY)</span
+                  ><input
+                    type="text"
+                    name="exp"
+                    placeholder="12/28"
+                    required
+                    maxlength="5"
+                /></label>
+                <label
+                  ><span>CVC</span
+                  ><input
+                    type="text"
+                    name="cvc"
+                    required
+                    inputmode="numeric"
+                    maxlength="4"
+                /></label>
+              </div>
+              <p class="co-secure">🔒 Demo mode — no real charge will occur.</p>
+              <div class="checkout-actions">
+                <button
+                  type="button"
+                  class="btn btn-ghost"
+                  data-co-prev="2"
+                >
+                  ← Back
+                </button>
+                <button type="submit" class="btn btn-primary">
+                  Place Order →
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="checkout-step checkout-success" data-step="4">
+            <div class="success-burst">✓</div>
+            <h3>Your pack is on its way ✦</h3>
+            <p class="co-success-sub">
+              Order
+              <strong id="orderId">#HEA-00000</strong> confirmed. We'll email a
+              receipt shortly.
+            </p>
+            <div class="co-success-card">
+              <p class="co-success-label">Estimated arrival</p>
+              <p class="co-success-eta" id="orderEta">Tue, May 21</p>
+            </div>
+            <button class="btn btn-primary btn-full" data-close="checkoutModal">
+              Continue Exploring →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--  TOAST CONTAINER  -->
+    <div class="toast-stack" id="toastStack"></div>
+
+    <!--  CONFETTI CANVAS  -->
+    <canvas id="confettiCanvas" class="confetti-canvas"></canvas>
+
+    <!--  DAILY TIP  -->
+    <div class="tip-card" id="tipCard" hidden>
+      <button class="tip-x" id="tipClose" aria-label="Dismiss">✕</button>
+      <span class="tip-tag">💡 Daily Tip</span>
+      <p id="tipText">Stay hydrated — most students drink 30% less than they think.</p>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
