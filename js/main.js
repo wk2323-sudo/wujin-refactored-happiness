@@ -1,8 +1,6 @@
-/* ============================================================
-   HEALII — App Logic
-   ============================================================ */
 
-/* ---------- STORAGE KEYS ---------- */
+
+/* storage keys*/
 const STORAGE = {
   identity:  'healii_identity_v2',
   user:      'healii_user_v1',
@@ -29,7 +27,7 @@ const ls = {
   },
 };
 
-/* ---------- TOAST ---------- */
+/* toast */
 const toastStack = document.getElementById('toastStack');
 function toast(msg, type = 'info', ms = 3200) {
   const ico = { success: '✓', error: '✕', info: '✦' }[type] || '✦';
@@ -43,7 +41,7 @@ function toast(msg, type = 'info', ms = 3200) {
   }, ms);
 }
 
-/* ---------- NAV ---------- */
+/* nav */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 40);
@@ -76,7 +74,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-/* ---------- REVEAL ON SCROLL ---------- */
+/* reveal on scroll */
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -87,7 +85,7 @@ const revealObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-/* ---------- STAT COUNTERS ---------- */
+/* stat counter */
 function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
 function animateCounter(el) {
   const target = parseInt(el.dataset.target, 10);
@@ -110,9 +108,7 @@ new IntersectionObserver(([entry]) => {
   }
 }, { threshold: 0.4 }).observe(statsSection);
 
-/* ============================================================
-   IDENTITIES — 16 archetypes
-   ============================================================ */
+/* Identities */
 const IDENTITIES = {
   night_owl: {
     emoji: '🦉', title: 'The Night Owl', cat: 'sleep',
@@ -245,7 +241,7 @@ const IDENTITIES = {
 };
 const ID_LIST = Object.entries(IDENTITIES).map(([key, v]) => ({ key, ...v }));
 
-/* ---------- IDENTITIES GRID ---------- */
+/* identities grid */
 const idGrid    = document.getElementById('idGrid');
 const idEmpty   = document.getElementById('idEmpty');
 const idSearch  = document.getElementById('idSearch');
@@ -312,9 +308,7 @@ function previewIdentity(key) {
   toast(`${id.emoji} ${id.title} — try the quiz to see if it's yours!`, 'info', 3000);
 }
 
-/* ============================================================
-   QUIZ — 8 questions, weighted scoring
-   ============================================================ */
+/* quiz */
 const QUESTIONS = [
   {
     q: 'How many hours do you typically sleep per night?', emoji: '😴',
@@ -602,7 +596,7 @@ quizContent.addEventListener('click', e => {
   }
 });
 
-/* ---------- HERO CARD ROTATION ---------- */
+/* hero card rotation */
 const heroIdentities = ['night_owl', 'grinder', 'scholar', 'naturalist', 'athlete', 'zen_seeker', 'gamer'];
 const mainCard = document.getElementById('heroMainCard');
 let idxId = 0;
@@ -627,9 +621,7 @@ if (mainCard) {
   }, 3400);
 }
 
-/* ============================================================
-   MODAL HELPERS
-   ============================================================ */
+/* modal helpers */
 function openModal(id) {
   const m = document.getElementById(id);
   if (!m) return;
@@ -652,9 +644,7 @@ document.addEventListener('keydown', e => {
   }
 });
 
-/* ============================================================
-   AUTH (localStorage-only, demo)
-   ============================================================ */
+/* auth  */
 const authModal = document.getElementById('authModal');
 const loginForm = document.getElementById('loginForm');
 const signupForm = document.getElementById('signupForm');
@@ -795,9 +785,7 @@ function showOrders() {
   toast(`📦 ${orders.length} order${orders.length > 1 ? 's' : ''}. Latest: ${last.id} — arrives ${last.eta}`, 'info', 4200);
 }
 
-/* ============================================================
-   DASHBOARD
-   ============================================================ */
+/* dashboard*/
 const dashModal = document.getElementById('dashModal');
 const todayKey = () => new Date().toISOString().slice(0, 10);
 
@@ -930,7 +918,7 @@ function renderStreak() {
   document.getElementById('streakDays').textContent = streak;
 }
 
-/* ---------- BADGES ---------- */
+/* badges */
 const BADGES = [
   { id: 'first_step',   icon: '👟', name: 'First Step',     test: () => !!loadIdentity() },
   { id: 'three_day',    icon: '🔥', name: '3-Day Streak',   test: () => streakCount() >= 3 },
@@ -984,7 +972,7 @@ function renderBadges() {
   document.getElementById('badgeCount').textContent = `${count} / ${BADGES.length} unlocked`;
 }
 
-/* ---------- WEEKLY CHART (canvas) ---------- */
+/* weekly chart */
 function drawChart() {
   const canvas = document.getElementById('dashChart');
   if (!canvas) return;
@@ -1116,9 +1104,7 @@ window.addEventListener('resize', () => {
   if (dashModal.classList.contains('open')) drawChart();
 });
 
-/* ============================================================
-   CHECKOUT
-   ============================================================ */
+/* checkout */
 const PLANS = {
   identity: { title: 'Identity Pack',  price: 19.99 },
   pro:      { title: 'Campus Pro',     price: 24.99 },
@@ -1201,9 +1187,7 @@ expInput.addEventListener('input', () => {
   expInput.value = v;
 });
 
-/* ============================================================
-   TESTIMONIALS CAROUSEL
-   ============================================================ */
+/* testimonal */
 const testiTrack = document.getElementById('testiTrack');
 const testiDots = document.getElementById('testiDots');
 const testiCards = testiTrack.children.length;
@@ -1247,9 +1231,7 @@ renderTestiDots();
 goTesti(0);
 resetTestiTimer();
 
-/* ============================================================
-   FAQ — single-open behavior
-   ============================================================ */
+/* faq */
 document.querySelectorAll('#faqList .faq-item').forEach(d => {
   d.addEventListener('toggle', () => {
     if (d.open) {
@@ -1260,9 +1242,7 @@ document.querySelectorAll('#faqList .faq-item').forEach(d => {
   });
 });
 
-/* ============================================================
-   NEWSLETTER
-   ============================================================ */
+/* newsletter*/
 document.getElementById('newsletterForm').addEventListener('submit', e => {
   e.preventDefault();
   const email = document.getElementById('newsletterEmail').value.trim().toLowerCase();
@@ -1278,9 +1258,7 @@ document.getElementById('newsletterForm').addEventListener('submit', e => {
   document.getElementById('newsletterEmail').value = '';
 });
 
-/* ============================================================
-   QUIZ TRIGGERS
-   ============================================================ */
+/* quiz trigger*/
 ['heroQuizBtn', 'ctaQuizBtn'].forEach(id => {
   document.getElementById(id)?.addEventListener('click', openQuiz);
 });
@@ -1288,9 +1266,7 @@ document.getElementById('newsletterForm').addEventListener('submit', e => {
   document.getElementById(id)?.addEventListener('click', openQuizSmart);
 });
 
-/* ============================================================
-   CONFETTI
-   ============================================================ */
+/* confetti */
 const confettiCanvas = document.getElementById('confettiCanvas');
 const confettiCtx = confettiCanvas.getContext('2d');
 let confettiPieces = [];
@@ -1355,9 +1331,7 @@ function confettiTick() {
   }
 }
 
-/* ============================================================
-   DAILY TIP
-   ============================================================ */
+/* daily tip*/
 const TIPS = [
   'Stay hydrated — most students drink 30% less than they think.',
   '15 min of morning sunlight can reset your circadian rhythm.',
@@ -1383,9 +1357,7 @@ tipClose.addEventListener('click', () => {
 });
 setTimeout(showRandomTip, 6000);
 
-/* ============================================================
-   INIT
-   ============================================================ */
+/* init*/
 applyIdentityToNav();
 document.querySelectorAll('.step').forEach((step, i) => {
   step.style.transitionDelay = `${i * 80}ms`;
