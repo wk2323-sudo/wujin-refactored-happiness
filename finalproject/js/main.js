@@ -1,5 +1,3 @@
-
-
 /* storage keys*/
 const STORAGE = {
   identity:  'healii_identity_v2',
